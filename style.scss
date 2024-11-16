@@ -1,5 +1,7 @@
 @use "sass:color";
 
+@use "./widget/notifications/Notification.scss";
+
 $bg: #242424;
 $fg: #D8C49A;
 $accent: #7FA697;
@@ -57,6 +59,30 @@ window.Bar {
     margin-left: 0;
   }
 
+  .AudioVolume {
+    margin: 0 1em;
+
+    * {
+      all: unset;
+    }
+
+    icon {
+      margin-right: .3em;
+    }
+
+    trough {
+      background-color: color.adjust($fg, $alpha: -0.8);
+      border-radius: $radius;
+    }
+
+    highlight {
+      background-color: $accent;
+      min-height: .8em;
+      border-radius: $radius;
+    }
+  }
+
+  // Unused
   .AudioSlider {
     margin: 0 1em;
 
@@ -87,4 +113,5 @@ window.Bar {
       margin: -.2em;
     }
   }
+
 }

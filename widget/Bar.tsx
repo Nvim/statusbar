@@ -53,6 +53,15 @@ function AudioSlider() {
     </box>
 }
 
+function AudioVolume() {
+  const speaker = Wp.get_default()?.audio.defaultSpeaker!
+
+  return <box className="AudioVolume">
+    <icon icon={bind(speaker, "volumeIcon")} />
+    <label label={bind(speaker, "volume").as(p => `${Math.floor(p*100)}%`)} />
+  </box>
+}
+
 function BatteryLevel() {
     const bat = Battery.get_default()
 
@@ -95,6 +104,7 @@ function Workspaces() {
 
     return <box className="Workspaces">
         {bind(hypr, "workspaces").as(wss => wss
+            .filter((ws) => ws.id >= 0)
             .sort((a, b) => a.id - b.id)
             .map(ws => (
                 <button
@@ -153,7 +163,8 @@ export default function Bar(monitor: Gdk.Monitor) {
             <box hexpand halign={Gtk.Align.END} >
                 <SysTray />
                 <Wifi />
-                <AudioSlider />
+                <AudioVolume />
+                {/* <AudioSlider /> */}
                 <BatteryLevel />
                 <Time />
             </box>

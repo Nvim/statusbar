@@ -1,6 +1,7 @@
 import { App } from "astal/gtk3"
 import style from "./style.scss"
 import Bar from "./widget/Bar"
+import NotificationPopups from "./widget/notifications/NotificationPopups"
 
 function main() {
   const bars = new Map<Gdk.Monitor, Gtk.Widget>()
@@ -17,6 +18,8 @@ function main() {
     bars.get(gdkmonitor)?.destroy()
     bars.delete(gdkmonitor)
   })
+
+  App.get_monitors().map(NotificationPopups)
 }
 
 App.start({

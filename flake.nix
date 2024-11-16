@@ -48,7 +48,14 @@
           buildInputs = [
             # includes all Astal libraries
             ags.packages.${system}.agsFull
+            ags.packages.${system}.battery
             ags.packages.${system}.hyprland
+            ags.packages.${system}.mpris
+            ags.packages.${system}.wireplumber
+            ags.packages.${system}.network
+            ags.packages.${system}.tray
+            ags.packages.${system}.bluetooth
+            ags.packages.${system}.notifd
 
             # includes astal3 astal4 astal-io by default
             # (ags.packages.${system}.default.overrideAttrs {
