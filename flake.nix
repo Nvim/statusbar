@@ -38,6 +38,8 @@
             ags.packages.${system}.tray
             ags.packages.${system}.bluetooth
             ags.packages.${system}.notifd
+            pkgs.nerd-fonts.ubuntu-mono
+            pkgs.nerd-fonts.ubuntu
             # pkgs.fzf
           ];
         };
