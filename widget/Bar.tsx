@@ -94,7 +94,7 @@ function Media() {
                 />
             </box>
         ) : (
-            "Nothing Playing"
+            ""
         ))}
     </box>
 }
