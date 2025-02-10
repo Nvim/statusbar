@@ -5,14 +5,14 @@
 $bg: #242424;
 $fg: #D8C49A;
 $accent: #7FA697;
-$radius: 7px;
+$radius: 0px;
 
 window.Bar {
   border: none;
   box-shadow: none;
   background-color: $bg;
   color: $fg;
-  font-size: 1.1em;
+  font-size: 1.0em;
   font-weight: bold;
 
   button {
@@ -38,8 +38,9 @@ window.Bar {
   }
 
   .Workspaces .focused label {
-    color: $accent;
-    border-color: $accent;
+    // color: $accent;
+    border-color: $fg;
+    background-color: $accent;
   }
 
   .FocusedClient {
